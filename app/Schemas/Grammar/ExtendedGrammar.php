@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Schemas\Grammars;
+namespace App\Schemas\Grammar;
 
 use Illuminate\Database\Schema\Grammars\MySqlGrammar;
 use Illuminate\Support\Fluent;
