@@ -16,10 +16,9 @@ class CreateCarInstancesTable extends Migration
         Schema::create('car_instances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('car_id'); //->constrained();
-            $table->string('exterior_color')->nullable();
-            $table->string('interior_color')->nullable();
             $table->date('received_on')->nullable();
             $table->date('sold_on')->nullable();
+            $table->string('status')->default('origin');
             $table->boolean('is_available')->default(false);
             $table->timestamps();
             $table->softDeletes();

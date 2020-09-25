@@ -5,17 +5,9 @@
     </h2>
   </x-slot>
   
-  <div class="container mx-auto">
-    <div class="bg-white m-8 p-8 overflow-hidden shadow-xl sm:rounded-lg">
+  <div>
+    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
       <livewire:car.car-update :car="$car"/>
-      <div class="flex justify-between mt-8">
-        <a class="btn btn-gray" href="{{ url()->previous() }}">
-          Cancel
-        </a>
-        <button type="submit" form="update-form" class="btn btn-blue">
-          Update Car
-        </button>
-      </div>
     </div>
   </div>
 </x-app-layout>

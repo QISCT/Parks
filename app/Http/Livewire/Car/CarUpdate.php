@@ -20,6 +20,12 @@ class CarUpdate extends CarCreate
             $this->mfg = $this->car->mfg_id;
             $this->oem = $this->car->oem_id;
             $this->model = $this->car->model;
+            $this->type = $this->car->type_id;
+            $this->engine = $this->car->engine_id;
+            $this->transmission = $this->car->transmission_id;
+            $this->drivetrain = $this->car->drivetrain_id;
+            $this->fuel = $this->car->fuel_id;
+            $this->lot = $this->car->lot_id;
         }
     }
 
@@ -44,6 +50,12 @@ class CarUpdate extends CarCreate
             'mfg_id' => $this->mfg,
             'oem_id' => $this->oem,
             'model' => $this->model,
+            'type_id' => $this->type,
+            'engine_id' => $this->engine,
+            'transmission_id' => $this->transmission,
+            'drivetrain_id' => $this->drivetrain,
+            'fuel_id' => $this->fuel,
+            'lot_id' => $this->lot,
         ]);
 
         return redirect()->to(route('cars.show', $this->car));

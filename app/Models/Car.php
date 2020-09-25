@@ -69,7 +69,7 @@ class Car extends Model
      */
     function car_instances()
     {
-        return $this->hasMany(CarInstance::class);
+        return $this->hasMany(CarInstance::class)->orderBy('received_on');
     }
 
     /**
@@ -109,7 +109,7 @@ class Car extends Model
      */
     function type()
     {
-        return $this->belongsTo(CarType::class);
+        return $this->belongsTo(CarType::class, 'type_id');
     }
 
     /**

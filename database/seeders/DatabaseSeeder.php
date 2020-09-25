@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Car;
+use App\Models\CarType;
 use App\Models\Drivetrain;
 use App\Models\Engine;
 use App\Models\Fuel;
@@ -31,6 +32,17 @@ class DatabaseSeeder extends Seeder
 
         Mfg::truncate();
         $mfgs = Mfg::insert(getMfgs());
+
+        CarType::truncate();
+        CarType::insert([
+            ['name' => 'Hearse'],
+            ['name' => 'Limousine'],
+            ['name' => 'Flower Car'],
+            ['name' => 'Van'],
+            ['name' => 'Sedan'],
+            ['name' => 'SUV'],
+            ['name' => 'Truck'],
+        ]);
 
         Lot::truncate();
         Lot::insert([
@@ -88,12 +100,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $normalizeCar = function ($car) {
-            $car = new Car(collect($car)->except('id')->toArray());
-            $car->oem_id = OEM_KEYS[$car->oem_id] ?? null;
-            $car->mfg_id = MFG_KEYS[$car->mfg_id] ?? null;
-            if(collect($car->only('oem_id', 'mfg_id', 'model', 'vin', 'type_id', 'year'))->contains(false))
+            $instances = explode(';', $car['instances']);
+            $car = new Car(collect($car)->except(['id', 'instances'])->toArray());
+//            if(collect($car->only('oem_id', 'mfg_id', 'model', 'vin', 'type_id', 'year'))->contains(false))
+//                return false;
+
+            if(!$car->mfg_id || !$car->oem_id || !$car->vin || !$car->type_id || !$car->year)
                 return false;
-            $car->save();
+
+            $car->saveOrFail();
+
+            $inst_keys = collect(['received_on', 'sold_on', 'status']);
+            foreach($instances as $inst)
+                $car->car_instances()->create($inst_keys->combine(explode(',', $inst))->toArray());
 
             return Car::count() >= 200;
         };
