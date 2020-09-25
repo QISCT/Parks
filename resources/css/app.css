@@ -8,13 +8,12 @@
 
 .form-control:focus {
     @apply outline-none border-blue-400;
-    border-width: 2px;
+    /*border-width: 2px;*/
 }
 
 /* FLOATING LABELS */
 .form-label-group {
     position: relative;
-    margin-bottom: 1rem;
 }
 
 .form-label-group > input,
@@ -30,7 +29,7 @@
     .form-label-group > textarea,
     .form-label-group > select,
     .form-label-group > label {
-        width: 50%;
+        max-width: 50%;
         display: inline-block;
         margin-right: 0.5rem;
     }
@@ -114,7 +113,7 @@
 
 .is-invalid {
     @apply border-red-500;
-    border-width: 2px;
+    /*border-width: 2px;*/
     border-style: solid;
 }
 
@@ -132,4 +131,8 @@ select.alt-arrow {
     background-position-y: 50%, 50%, 0;
     background-size: 5px 5px, 5px 5px, 40px 50px;
     background-repeat: no-repeat;
+}
+
+.btn-warning {
+    color: white !important;
 }

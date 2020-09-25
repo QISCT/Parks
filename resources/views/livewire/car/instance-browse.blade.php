@@ -4,7 +4,7 @@
     <th class="px-8 py-4">Received On</th>
     <th class="px-8 py-4">Sold On</th>
     <th class="">
-      <a href="{{ route('cars.instances.create', [$car]) }}" class="btn btn-purple">
+      <a href="{{ route('cars.instances.create', [$car]) }}" class="btn btn-primary">
         Create Instance
       </a>
     </th>
