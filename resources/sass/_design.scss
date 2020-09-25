@@ -1,0 +1,226 @@
+#body {
+ @include media-breakpoint-down(sm) {
+  .noScrolls {
+   &, > {
+    overflow: hidden;
+   }
+  }
+ }
+}
+#layout {
+ background-color: #E9ECF3;
+ display: flex;
+ flex-direction: column;
+ height: 100vh;
+ position: relative;
+ width: 100vw;
+}
+#header {
+ background-color: #fff;
+ display: flex;
+ justify-content: space-between;
+ padding: 1rem;
+ position: relative;
+ z-index: 100;
+ @include media-breakpoint-up(lg) {
+  height: 60px;
+  position: absolute;
+  max-width: 280px;
+  width: 20vw;
+ }
+}
+#logo {
+ margin-top: -1rem;
+ margin-right: -1rem;
+ margin-bottom: -1rem;
+ margin-left: -1rem;
+ @include media-breakpoint-up(lg) {
+  margin-left: auto;
+  margin-right: auto;
+ }
+ img {
+  max-height: 70px;
+ }
+}
+#mainNavToggle {
+ @include media-breakpoint-up(lg) {
+  display: none;
+ }
+}
+#torso {
+ flex: 1 1 auto;
+ max-height: 100%;
+ overflow-y: auto;
+ border-top: 1px solid #fafafa;
+ position: static;
+ @include media-breakpoint-up(lg) {
+  display: flex;
+  flex-direction: row;
+ }
+}
+#mainNav {
+ background-color: #1B2033;
+ .nav-link {
+  color: $light;
+  &.active {
+   background-color: rgba($white, .1);
+   border-left: 4px solid $yellow;
+  }
+ }
+ @include media-breakpoint-down(md) {
+  align-items: center;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 80;
+  &.active {
+   display: flex;
+  }
+ }
+ @include media-breakpoint-up(lg) {
+  flex: 0 0 20%;
+  max-width: 280px;
+  padding-top: calc(1rem + 60px);
+  display: flex;
+  flex-direction: column;
+  > .btn {
+   width: calc(100% - 2rem);
+   align-self: center;
+   transition: all .35s ease-in-out;
+   &:hover, &:focus {
+    transform: translateX(2em);
+   }
+   + .btn {
+    margin-top: .5rem;
+   }
+  }
+ }
+ .nav {
+  flex: 1 1 auto;
+  flex-direction: column;
+  @include media-breakpoint-down(md) {
+   margin-top: 6rem;
+   width: 70vw;
+  }
+ }
+}
+#contents {
+ @include media-breakpoint-up(lg) {
+  flex: 1 1 80%;
+ }
+}
+#globalNav {
+ display: flex;
+ background-color: #f6f7fb;
+ align-items: center;
+ flex-direction: row;
+ justify-content: space-between;
+ .input-group-text {
+  border-right: 0;
+  background-color: transparent;
+ }
+ .form-control {
+  border-left-color: transparent;
+  box-shadow: none;
+  &:focus {
+   border: 1px solid rgba($black, .1);
+   background-color: rgba($primary, .08);
+  }
+ }
+ @include media-breakpoint-up(md) {
+  .input-group {
+   flex: 1 1 70%;
+   max-width: 52vw;
+  }
+  .nav {
+   flex: 1 1 30%;
+   justify-content: flex-end;
+  }
+  .form-control {
+   background-color: transparent;
+  }
+ }
+ @include media-breakpoint-up(lg) {
+  align-items: inherit;
+  height: 60px;
+  > div, ul {
+   align-self: center;
+  }
+ }
+ .nav-link {
+  color: $dark;
+  position: relative;
+  .badge {
+   padding: 5px;
+   border-radius: 50%;
+   position: absolute;
+   top: 5px;
+   right: 8px;
+   line-height: 5px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   font-size: 10px;
+  }
+ }
+}
+#searcher {
+ padding: .5rem 1rem;
+ .input-group-text, .btn, .form-control {
+  border-radius: 0;
+ }
+ @include media-breakpoint-down(sm) {
+  &:not(.active) {
+   width: 20%;
+  }
+  .form-control, .input-group-append {
+   display: none;
+  }
+  &.active {
+   .input-group-text {
+    text-align: right;
+    display: block;
+   }
+   .input-group-append {
+    text-align: center;
+   }
+   background-color: #f6f7fb;
+   position: absolute;
+   z-index: 101;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   .fa-search {
+    &:before {
+     content: "\f00d";
+    }
+   }
+   > * {
+    margin: 0;
+    border: 1px solid red;
+    display: block;
+    width: 75vw;
+   }
+   > .form-control {
+    flex: unset;
+   }
+  }
+ }
+}
+#main {
+ padding: 1rem;
+ @include media-breakpoint-up(lg) {
+  max-height: calc(100% - 60px);
+  overflow-y: auto;
+ }
+}

@@ -20,7 +20,7 @@
       <td class="border px-8 py-4">{{ $car->mfg->name }}</td>
       <td class="border px-8 py-4">{{ $car->car_instances->count() }}</td>
       <td class="border p-4">
-        <a href="{{ route('cars.show', $car) }}" class="btn btn-blue">
+        <a href="{{ route('cars.show', $car) }}" class="btn btn-info">
           View Car
         </a>
       </td>
