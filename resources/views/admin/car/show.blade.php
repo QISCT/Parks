@@ -8,10 +8,10 @@
  <div class="container">
   <div class="card card-body shadow border-0 rounded-lg">
    <div class="flex justify-between mb-4">
-    <a class="btn btn-gray" href="{{ route('cars.index') }}">
+    <a class="btn btn-secondary" href="{{ route('cars.index') }}">
      List
     </a>
-    <a class="btn btn-yellow" href="{{ route('cars.edit', $car) }}">
+    <a class="btn btn-warning" href="{{ route('cars.edit', $car) }}">
      Edit
     </a>
    </div>

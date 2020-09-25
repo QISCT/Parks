@@ -9,7 +9,7 @@
   <div class="card card-body shadow border-0 rounded-lg">
    <livewire:car.instance-update :car="$car" :instance="$instance"/>
    <div class="flex justify-between mt-8">
-    <a class="btn btn-gray" href="{{ url()->previous() }}">
+    <a class="btn btn-secondary" href="{{ url()->previous() }}">
      Cancel
     </a>
     <button type="submit" form="update-form" class="btn btn-info">
