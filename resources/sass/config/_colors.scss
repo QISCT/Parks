@@ -11,16 +11,16 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$blue: #007bff;
+$blue: #162899; // altered
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #e83e8c;
-$red: #dc3545;
+$red: #f04165; // altered
 $orange: #fd7e14;
-$yellow: #ffc107;
-$green: #28a745;
+$yellow: #f1c23e; // altered
+$green: #4ad05b; // altered
 $teal: #20c997;
-$cyan: #17a2b8;
+$cyan:#3d58ff; // altered
 
 $primary: $blue;
 $secondary: $gray-600;
@@ -28,5 +28,5 @@ $success: $green;
 $info: $cyan;
 $warning: $yellow;
 $danger: $red;
-$light: $gray-100;
+$light: $gray-300;
 $dark: $gray-800;

@@ -1,0 +1,17 @@
+#body {
+ @include media-breakpoint-down(sm) {
+  .noScrolls {
+   &, > {
+    overflow: hidden;
+   }
+  }
+ }
+}
+#layout {
+ background-color: #E9ECF3;
+ display: flex;
+ flex-direction: column;
+ height: 100vh;
+ position: relative;
+ width: 100vw;
+}

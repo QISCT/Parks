@@ -16,7 +16,7 @@
       <td class="border px-8 py-4">{{ $instance->received_on }}</td>
       <td class="border px-8 py-4">{{ $instance->sold_on }}</td>
       <td class="border p-4">
-        <a href="{{ route('cars.instances.show', [$car, $instance]) }}" class="btn btn-blue">
+        <a href="{{ route('cars.instances.show', [$car, $instance]) }}" class="btn btn-info">
           View Instance
         </a>
       </td>

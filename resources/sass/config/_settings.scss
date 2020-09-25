@@ -12,14 +12,14 @@ $yiq-text-light: $white;
 // Quickly modify global styling by enabling or disabling optional features.
 $enable-caret: true;
 $enable-rounded: true;
-$enable-shadows: false;
-$enable-gradients: false;
+$enable-shadows: true;
+$enable-gradients: true;
 $enable-transitions: true;
 $enable-prefers-reduced-motion-media-query: true;
 $enable-grid-classes: true;
 $enable-pointer-cursor-for-buttons: true;
 $enable-print-styles: true;
-$enable-responsive-font-sizes: false;
+$enable-responsive-font-sizes: true;
 $enable-validation-icons: true;
 $enable-deprecation-messages: true;
 
@@ -79,3 +79,27 @@ $font-weight-bolder: bolder;
 
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
+
+// #ALERTS
+$alert-border-radius: 0;
+
+// #BADGES
+$badge-font-size: 79%;
+
+// #BUTTONS
+$btn-border-radius: 0;
+$btn-border-radius-lg: $btn-border-radius;
+$btn-border-radius-sm: $btn-border-radius;
+
+// #DROPDOWNS
+$dropdown-min-width: 15rem;
+$dropdown-border-radius: 0;
+$dropdown-inner-border-radius: $dropdown-border-radius;
+
+// #INPUTS
+$input-border-radius: 0;
+$input-border-radius-lg: $input-border-radius;
+$input-border-radius-sm: $input-border-radius;
+
+// #LIST GROUPS
+$list-group-border-radius: 0;

@@ -18,7 +18,9 @@
   <div id="layout" class="wrapper">
    <header id="header">
     <div id="logo">
-     logo [always]
+     <a href="#">
+      <img src="https://parkssuperior.com/wp-content/themes/understrap-child/img/logo.png" alt="Parks Superior Logo" />
+     </a>
     </div>
     <button id="mainNavToggle" class="btn btn-outline-secondary" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
      <span class="fas fa-bars"></span> <span class="sr-only">Toggle navigation</span>
@@ -153,12 +155,71 @@
          <a class="dropdown-item" href="#">Something else here</a>
         </div>
        </li>
+
        <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a class="nav-link" href="#" id="notificationsDD" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <span class="far fa-bell"></span>
-         <span class="badge badge-primary">5</span>
+         <span class="badge badge-primary badge-pill">5</span>
          <span class="sr-only">Tix</span>
         </a>
+        <div class="dropdown-menu p-0" aria-labelledby="notificationsDD">
+         <ul class="list-group list-group-flush pre-scrollable" style="max-width: 20rem">
+          <a href="#" class="list-group-item list-group-item-action p-2 d-flex align-items-start">
+           <div class="avatar bg-gradient-primary border-primary">
+            <i class="fas fa-fw fa-user-plus"></i>
+           </div>
+           <div class="">
+            <div>New user registered</div>
+            <small class="d-block text-muted">5 hours ago</small>
+           </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-2 d-flex align-items-start">
+           <div class="avatar bg-gradient-secondary border-secondary">
+            <i class="fas fa-fw fa-tasks-alt"></i>
+           </div>
+           <div class="">
+            <div>Work order created</div>
+            <small class="d-block text-muted">5 hours ago</small>
+           </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-2 d-flex align-items-start">
+           <div class="avatar bg-gradient-secondary border-secondary">
+            <i class="fas fa-fw fa-tasks-alt"></i>
+           </div>
+           <div class="">
+            <div>Work order created</div>
+            <small class="d-block text-muted">5 hours ago</small>
+           </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-2 d-flex align-items-start">
+           <div class="avatar bg-gradient-primary border-primary">
+            <i class="fas fa-fw fa-user-plus"></i>
+           </div>
+           <div class="">
+            <div>New user registered</div>
+            <small class="d-block text-muted">5 hours ago</small>
+           </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-2 d-flex align-items-start">
+           <div class="avatar bg-gradient-success border-success">
+            <i class="fas fa-fw fa-cars"></i>
+           </div>
+           <div class="">
+            <div>Vehicle added to inventory</div>
+            <small class="d-block text-muted">5 hours ago</small>
+           </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action p-2 d-flex align-items-start">
+           <div class="avatar bg-gradient-secondary border-secondary">
+            <i class="fas fa-fw fa-tasks-alt"></i>
+           </div>
+           <div class="">
+            <div>Work order created</div>
+            <small class="d-block text-muted">5 hours ago</small>
+           </div>
+          </a>
+         </ul>
+        </div>
        </li>
       </ul>
      </nav>
@@ -258,149 +319,6 @@
     </div>
    </div>
   </div>
-
- {{--
-  <div id="final">
-   <nav class="navbar navbar-expand-md navbar-light" id="left">
-    <div class="toggleContents">
-     <a href="#" id="logo">
-      <img src="https://parkssuperior.com/wp-content/themes/understrap-child/img/logo.png" alt="Parks Superior Logo" />
-     </a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-     </button>
-    </div>
-    <div class="collapse navbar-collapse" id="mainNav">
-     <ul class="nav">
-      <li class="nav-item">
-       <a href="#" class="nav-link">Site Design</a>
-      </li>
-      <li class="nav-item active">
-       <a href="#" class="nav-link">Stylesheet</a>
-      </li>
-      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="#" id="sampleDD1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Web Pages
-       </a>
-       <div class="dropdown-menu" aria-labelledby="sampleDD1">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-       </div>
-      </li>
-      <li class="nav-item">
-       <a href="#" class="nav-link">Site Images</a>
-      </li>
-      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="#" id="sampleDD2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Menu
-       </a>
-       <div class="dropdown-menu" aria-labelledby="sampleDD2">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-       </div>
-      </li>
-      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="#" id="sampleDD3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Site Files
-       </a>
-       <div class="dropdown-menu" aria-labelledby="sampleDD3">
-        <a class="dropdown-item" href="#">
-         <span class="fal fa-user"></span> Robots.txt
-        </a>
-        <a class="dropdown-item" href="#">
-         <span class="fal fa-user"></span> head.inc
-        </a>
-        <a class="dropdown-item" href="#">
-         <span class="fal fa-user"></span> head_index.inc
-        </a>
-        <a class="dropdown-item" href="#">
-         <span class="fal fa-user"></span> head_inner.inc
-        </a>
-       </div>
-      </li>
-     </ul>
-     <a href="{{route('testing-1')}}" class="btn btn-warning">Logout</a>
-    </div>
-   </nav>
-   <div id="right">
-    <div id="globals">
-
-     <div class="input-group">
-      <div class="input-group-prepend">
-       <label class="input-group-text" for="searcher01">
-       <span class="fas fa-search"></span>
-       </label>
-      </div>
-      <input type="text" class="form-control" id="searcher01" />
-      <button class="btn btn-light">Submit</button>
-     </div>
-
-     <ul class="nav">
-      <li class="nav-item">
-       <a class="nav-link" href="#" id="adminMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="fas fa-cog"></span> <span class="sr-only">Admin</span>
-       </a>
-       <div class="dropdown-menu" aria-labelledby="adminMenu">
-        <h6 class="dropdown-header">Admin Menu</h6>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-       </div>
-      </li>
-      <li class="nav-item">
-       <a class="nav-link" href="#" id="wizardMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="fas fa-wand-magic"></span> <span class="sr-only">Wiz</span>
-       </a>
-       <div class="dropdown-menu" aria-labelledby="wizardMenu">
-        <h6 class="dropdown-header">Wizard Menu</h6>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-       </div>
-      </li>
-      <li class="nav-item">
-       <a class="nav-link" href="#" id="globalMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="fas fa-globe"></span> <span class="sr-only">Global</span>
-       </a>
-       <div class="dropdown-menu" aria-labelledby="globalMenu">
-        <h6 class="dropdown-header">Global Menu</h6>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-       </div>
-      </li>
-      <li class="nav-item">
-       <a class="nav-link" href="#" id="reportsMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="fas fa-file-chart-line"></span> <span class="sr-only">Report</span>
-       </a>
-       <div class="dropdown-menu" aria-labelledby="reportsMenu">
-        <h6 class="dropdown-header">Reports Menu</h6>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-       </div>
-      </li>
-      <li class="nav-item">
-       <a href="#" class="nav-link">
-        <span class="far fa-bell"></span>
-        <span class="badge badge-primary">5</span>
-        <span class="sr-only">Tix</span>
-       </a>
-      </li>
-     </ul>
-
-    </div>
-   </div>
-  </div> --}}
-
   <script src="https://kit.fontawesome.com/77700fedd3.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
