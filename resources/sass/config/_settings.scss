@@ -61,6 +61,8 @@ $sizes: map-merge(
 $body-bg: $white;
 $body-color: $gray-900;
 
+// Links
+// $link-color: $cyan;
 
 // Typography
 $font-family-sans-serif: "Kumbh Sans";
@@ -86,6 +88,11 @@ $alert-border-radius: 0;
 // #BADGES
 $badge-font-size: 79%;
 
+// #BREADCRUMBS
+$breadcrumb-font-size: $font-size-base * .8;
+$breadcrumb-bg: rgba($black, .08);
+$breadcrumb-active-color: $dark;
+
 // #BUTTONS
 $btn-border-radius: 6px;
 $btn-border-radius-lg: $btn-border-radius * 1.2;
@@ -100,6 +107,9 @@ $btn-padding-x-sm: 1.45rem;
 $dropdown-min-width: 15rem;
 $dropdown-border-radius: 0;
 $dropdown-inner-border-radius: $dropdown-border-radius;
+
+// #FORMS
+$form-feedback-font-size: $font-size-base * .95;
 
 // #INPUTS
 $input-border-radius: 0;

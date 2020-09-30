@@ -1,37 +1,37 @@
-<table class="table-auto w-full">
-  <thead>
+<table class="table table-condensed table-hover table-sm">
+ <thead>
   <tr>
-    <th class="px-8 py-4">Created At</th>
-    <th class="px-8 py-4">VIN</th>
-    <th class="px-8 py-4">Year</th>
-    <th class="px-8 py-4">OEM</th>
-    <th class="px-8 py-4">MFG</th>
-    <th class="px-8 py-4">Instances</th>
-    <th class=""></th>
+   <th class="border-0">VIN</th>
+   <th class="border-0">Year</th>
+   <th class="border-0">OEM</th>
+   <th class="border-0">MFG</th>
+   <th class="border-0">Instances</th>
+   <th class="border-0">Created At</th>
+   <th class="border-0"></th>
   </tr>
-  </thead>
-  <tbody>
+ </thead>
+ <tbody>
   @foreach($cars as $car)
-    <tr>
-      <td class="border px-8 py-4">{{ $car->created_at->format('Y-m-d') }}</td>
-      <td class="border px-8 py-4">{{ $car->vin }}</td>
-      <td class="border px-8 py-4">{{ $car->year }}</td>
-      <td class="border px-8 py-4">{{ $car->oem->name }}</td>
-      <td class="border px-8 py-4">{{ $car->mfg->name }}</td>
-      <td class="border px-8 py-4">{{ $car->car_instances->count() }}</td>
-      <td class="border p-4">
-        <a href="{{ route('cars.show', $car) }}" class="btn btn-sm btn-info">
-          View Car
-        </a>
-      </td>
-    </tr>
-  @endforeach
-  </tbody>
-  <tfoot>
-  <tr>
-    <td class="p-4" colspan="100%">
-      {{ $cars->links() }}
+   <tr>
+    <td>
+     <a href="{{ route('cars.show', $car) }}">
+      {{ $car->vin }}
+     </a>
     </td>
-  </tr>
-  </tfoot>
+    <td>{{ $car->year }}</td>
+    <td>{{ $car->oem->name }}</td>
+    <td>{{ $car->mfg->name }}</td>
+    <td>{{ $car->car_instances->count() }}</td>
+    <td>{{ $car->created_at->format('Y-m-d') }}</td>
+    <td class="text-right">
+     <a href="{{ route('cars.show', $car) }}" class="btn btn-sm btn-info">
+      View Car
+     </a>
+    </td>
+   </tr>
+  @endforeach
+ </tbody>
+ <caption class="pl-3 pr-3 mb-n3 pb-0">
+  {{ $cars->links() }}
+ </caption>
 </table>

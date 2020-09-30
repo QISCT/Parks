@@ -310,7 +310,7 @@
 
       <!-- Page Heading -->
       @if($header)
-       <div class="flex">{{ $header ?? null }}</div>
+       <div class="pageTitle mb-4">{{ $header ?? null }}</div>
       @endif
 
       <!-- Page Content -->

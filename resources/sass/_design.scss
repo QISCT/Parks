@@ -223,7 +223,15 @@
 #main {
  padding: 1rem;
  @include media-breakpoint-up(lg) {
+  padding-left: 2rem;
+  padding-right: 2rem;
   max-height: calc(100% - 60px);
   overflow-y: auto;
+ }
+}
+
+table {
+ p {
+  margin-bottom: 0;
  }
 }
