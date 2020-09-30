@@ -33,12 +33,78 @@
    </header>
    <div id="torso" class="wrapper">
     <nav id="mainNav">
+     <div class="user pt-3 pl-3 pr-3 text-light">
+      <div class="d-flex mb-3">
+       <div class="avatar">
+        <img class="h-12 w-12 rounded-full ml-auto mr-auto" src="{{ Auth::user()->profile_photo_url }}" alt="" />
+       </div>
+       <div class="flex-fill ml-3">
+        <a href="#" data-toggle="collapse" data-target="#userMenu" aria-expanded="false" aria-controls="userMenu">
+         <span class="text-capitalize">{{ Auth::user()->name }}</span>
+         <span class="fas float-right fa-caret-down"></span>
+        </a>
+        <small class="d-block text-truncate" style="max-width: 150px">{{ Auth::user()->email }}</small>
+       </div>
+      </div>
+      <div class="collapse ml-n3 mr-n3" id="userMenu">
+       <x-jet-dropdown-link href="/user/profile">
+        <span class="fas fa-sm fa-user-cog fa-fw text-muted mr-1"></span> Profile
+       </x-jet-dropdown-link>
+
+       @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+        <x-jet-dropdown-link href="/user/api-tokens">
+         <span class="fas fa-sm fa-code fa-fw text-muted mr-1"></span> API Tokens
+        </x-jet-dropdown-link>
+       @endif
+
+       <div class="border-top border-gray-100"></div>
+
+       <!-- Team Management -->
+       @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+        <div class="block px-4 py-2 text-xs text-gray-400">
+         Manage Team
+        </div>
+
+        <!-- Team Settings -->
+        <x-jet-dropdown-link href="/teams/{{ Auth::user()->currentTeam->id }}">
+         Team Settings
+        </x-jet-dropdown-link>
+
+        @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+         <x-jet-dropdown-link href="/teams/create">
+          Create New Team
+         </x-jet-dropdown-link>
+        @endcan
+
+        <div class="border-top border-gray-100"></div>
+
+        <!-- Team Switcher -->
+        <div class="block px-4 py-2 text-xs text-gray-400">
+         Switch Teams
+        </div>
+
+        @foreach (Auth::user()->allTeams() as $team)
+         <x-jet-switchable-team :team="$team" />
+        @endforeach
+
+        <div class="border-top border-gray-100"></div>
+       @endif
+       <!-- Authentication -->
+       <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+         <span class="fas fa-sm fa-sign-out-alt fa-fw text-muted mr-1"></span>
+         Logout
+        </x-jet-dropdown-link>
+       </form>
+      </div>
+     </div>
      <div class="nav">
       <x-jet-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
        Dashboard
       </x-jet-nav-link>
       <x-jet-nav-link href="{{ route('cars.index') }}" :active="request()->routeIs('cars.index')">
-       Car
+       Inventory
       </x-jet-nav-link>
      </div>
      @if (Route::has('login'))
@@ -79,7 +145,7 @@
         <div class="block px-4 py-2 text-xs text-gray-400">
          Manage Account
         </div>
-        
+
          <div class="flex items-center px-4 py-2">
           <div class="flex-shrink-0">
            <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="" />
@@ -255,8 +321,9 @@
   </div>
 
   @stack('modals')
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script>
    $(document).ready(function(){
     $('#mainNavToggle').click(function(event) {

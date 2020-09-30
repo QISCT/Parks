@@ -1,0 +1,51 @@
+
+@each $color, $value in $colors {
+ /* BEGIN: #{$color} classes */
+ @include table-row-variant($color, $value, $value);
+ .btn-#{$color} {
+  @include button-variant($value, $value);
+ }
+ .badge-#{$color} {
+  @include badge-variant($value);
+  color: color-yiq($value);
+ }
+ .alert-#{$color} {
+  @include alert-variant($value, darken($value, 5%), color-yiq($value));
+  .alert-link {
+   color: lighten($value, 15%);
+  }
+ }
+ @include bg-variant(".bg-#{$color}", $value);
+
+ @include text-emphasis-variant(".text-#{$color}", $value);
+ .text-#{$color}-50 {
+  color: rgba($value, .5) !important;
+ }
+ .bg-#{$color}-50 {
+  background-color: rgba($value, .5) !important;
+ }
+ .border-#{$color} {
+  border-color: $value !important;
+ }
+
+  // OK, but is $enable-gradients: true? If they are, proceed with creating these classes:
+  /* $enable-gradients is true - to remove these classes make false. */
+  @if $enable-gradients {
+   .bg-gradient-#{$color} {
+    @include gradient-directional(mix($body-bg, $value, $theme-color-interval), $value, 110deg);
+   }
+   a.bg-gradient-#{$color}, button.bg-gradient-#{$color} {
+    @include hover-focus {
+     @include gradient-directional(darken($value, 10%), darken($value, 20%), -110deg);
+    }
+   }
+   @each $endColor, $endValue in $colors {
+    @if $color != $endColor {
+     .#{$color}-to-#{$endColor} {
+      color: color-yiq($value);
+      @include gradient-directional(mix($white, $value, 25%), mix($white, $endValue, 25%), 110deg);
+     } // produces class names such as: .blue-to-green
+    } // if color names match, skip them. IE: skip .blue-to-blue
+   } // creating our second loop in order to repeat our color variables by renaming
+  }/* END: this color class... */
+ } // start looping through colors map, ie: red, green, orange, blue, etc

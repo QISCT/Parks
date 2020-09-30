@@ -3,4 +3,11 @@
 
 @import 'bootstrap';
 
+@import 'config/colorExtension';
+
+
 @import 'design';
+.btn {
+ text-transform: uppercase;
+ letter-spacing: 1.2px;
+}

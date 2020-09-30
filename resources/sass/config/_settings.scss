@@ -87,9 +87,14 @@ $alert-border-radius: 0;
 $badge-font-size: 79%;
 
 // #BUTTONS
-$btn-border-radius: 0;
-$btn-border-radius-lg: $btn-border-radius;
-$btn-border-radius-sm: $btn-border-radius;
+$btn-border-radius: 6px;
+$btn-border-radius-lg: $btn-border-radius * 1.2;
+$btn-border-radius-sm: $btn-border-radius * .8;
+$btn-font-size-sm: $font-size-base * .75;
+$btn-line-height-sm: $btn-font-size-sm * 1.5;
+$btn-box-shadow: none;
+$btn-padding-y-sm: .45rem;
+$btn-padding-x-sm: 1.45rem;
 
 // #DROPDOWNS
 $dropdown-min-width: 15rem;
@@ -103,3 +108,7 @@ $input-border-radius-sm: $input-border-radius;
 
 // #LIST GROUPS
 $list-group-border-radius: 0;
+
+
+// #PROGRESS BARS
+$progress-bg: rgba($black, 0.1);

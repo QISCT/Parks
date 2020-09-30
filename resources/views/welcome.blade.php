@@ -28,7 +28,7 @@
    </header>
    <div id="torso" class="wrapper">
     <nav id="mainNav">
-     <ul class="nav">
+     {{-- <ul class="nav">
       <li class="nav-item">
        <a href="#" class="nav-link">Site Design</a>
       </li>
@@ -79,7 +79,7 @@
         </a>
        </div>
       </li>
-     </ul>
+     </ul> --}}
 
      @if (Route::has('login'))
       @auth
