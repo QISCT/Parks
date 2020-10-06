@@ -22,5 +22,42 @@
    <label>Sold On</label>
    <div>{{ $instance->sold_on }}</div>
   </div>
+  
+  
+   <div class="form-group">
+     <label for="cost_orig">Cost Original</label>
+     <div>{{ $instance->cost_orig }}</div>
+   </div>
+   <div class="form-group">
+     <label for="cost_est">Cost Estimate</label>
+     <div>{{ $instance->cost_est }}</div>
+   </div>
+   <div class="form-group">
+     <label for="cost_repair">Cost Repair</label>
+     <div>{{ $instance->cost_repair }}</div>
+   </div>
+   <div class="form-group">
+     <label for="cost_floor">Cost Floor</label>
+     <div>{{ $instance->cost_floor }}</div>
+   </div>
+   <div class="form-group">
+     <label for="cost_total">Cost Total</label>
+     <div>{{ $instance->cost_total }}</div>
+   </div>
+   <div class="form-group">
+     <label for="cost_sugg">Cost Suggested</label>
+     <div>{{ $instance->cost_sugg }}</div>
+   </div>
+  
+   <div class="form-group">
+     <label for="status">Status</label>
+     <div>{{ $instance->status }}</div>
+   </div>
+   <div class="form-group">
+     <label for="cond">Condition</label>
+     <div>{{ $instance->cond }}</div>
+   </div>
+   
+   
  </div>
 </x-app-layout>

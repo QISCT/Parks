@@ -16,9 +16,22 @@ class CreateCarInstancesTable extends Migration
         Schema::create('car_instances', function (Blueprint $table) {
             $table->id();
             $table->foreignId('car_id'); //->constrained();
+            $table->foreignId('cust_id')->nullable();
+            $table->foreignId('sales_order_id')->nullable();
+
             $table->date('received_on')->nullable();
             $table->date('sold_on')->nullable();
-            $table->string('status')->default('origin');
+
+            $table->float('cost_orig')->nullable();
+            $table->float('cost_est')->nullable();
+            $table->float('cost_repair')->nullable();
+            $table->float('cost_floor')->nullable();
+            $table->float('cost_total')->nullable();
+            $table->float('cost_sugg')->nullable();
+
+            $table->string('cond')->nullable();
+            $table->string('status')->nullable();
+
             $table->boolean('is_available')->default(false);
             $table->timestamps();
             $table->softDeletes();

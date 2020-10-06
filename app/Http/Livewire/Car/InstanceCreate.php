@@ -11,6 +11,14 @@ class InstanceCreate extends Component
     public Car $car;
     public $received_on = null;
     public $sold_on = null;
+    public $cost_orig = null;
+    public $cost_est = null;
+    public $cost_repair = null;
+    public $cost_floor = null;
+    public $cost_total = null;
+    public $cost_sugg = null;
+    public $cond = null;
+    public $status = null;
 
     public function mount()
     {
@@ -27,6 +35,12 @@ class InstanceCreate extends Component
         return [
             'received_on' => 'required|date|after:1970.01.01',
             'sold_on' => 'nullable|date|after:received_on',
+            'cost_orig' => 'nullable|numeric',
+            'cost_est' => 'nullable|numeric',
+            'cost_repair' => 'nullable|numeric',
+            'cost_floor' => 'nullable|numeric',
+            'cost_total' => 'nullable|numeric',
+            'cost_sugg' => 'nullable|numeric',
         ];
     }
 
@@ -37,6 +51,14 @@ class InstanceCreate extends Component
         $this->car->car_instances()->create([
             'received_on' => $this->received_on,
             'sold_on' => $this->sold_on,
+            'cost_orig' => $this->cost_orig,
+            'cost_est' => $this->cost_est,
+            'cost_repair' => $this->cost_repair,
+            'cost_floor' => $this->cost_floor,
+            'cost_total' => $this->cost_total,
+            'cost_sugg' => $this->cost_sugg,
+            'cond' => $this->cond,
+            'status' => $this->status,
         ]);
 
         return redirect()->to(route('cars.show', $this->car));
