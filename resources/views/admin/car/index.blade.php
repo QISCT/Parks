@@ -206,58 +206,58 @@
     </div>
     <div class="d-flex flex-nowrap alternator">
      <div class="d-flex flex-column align-items-center justify-content-center bg-light p-5 text-black-50">Replace with image</div>
-     <div class="p-3 flex-fill small">
-      <div class="form-row flex-nowrap mb-1">
-       <div class="col"><label class="d-block font-weight-bold mb-0">Body Style:</label></div>
-       <div class="col text-truncate">Sport Utility Vehicle</div>
+     <div class="carStats d-lg-flex flex-fill flex-wrap">
+      <div class="p-3 flex-fill small">
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Body Style:</label></div>
+        <div class="col text-truncate">Sport Utility Vehicle</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Drivetrain:</label></div>
+        <div class="col text-truncate">4WD</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Engine:</label></div>
+        <div class="col text-truncate">4.8L V8</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Transmission:</label></div>
+        <div class="col text-truncate">8-Speed Tiptronic</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Mileage:</label></div>
+        <div class="col text-truncate">19,585</div>
+       </div>
       </div>
-      <div class="form-row flex-nowrap mb-1">
-       <div class="col"><label class="d-block font-weight-bold mb-0">Drivetrain:</label></div>
-       <div class="col text-truncate">4WD</div>
+      <div class="p-3 flex-fill small d-none d-lg-block">
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Body Style:</label></div>
+        <div class="col text-truncate">Sport Utility Vehicle</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Drivetrain:</label></div>
+        <div class="col text-truncate">4WD</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Engine:</label></div>
+        <div class="col text-truncate">4.8L V8</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Transmission:</label></div>
+        <div class="col text-truncate">8-Speed Tiptronic</div>
+       </div>
+       <div class="form-row flex-nowrap mb-1">
+        <div class="col"><label class="d-block font-weight-bold mb-0">Mileage:</label></div>
+        <div class="col text-truncate">19,585</div>
+       </div>
       </div>
-      <div class="form-row flex-nowrap mb-1">
-       <div class="col"><label class="d-block font-weight-bold mb-0">Engine:</label></div>
-       <div class="col text-truncate">4.8L V8</div>
-      </div>
-      <div class="form-row flex-nowrap mb-1">
-       <div class="col"><label class="d-block font-weight-bold mb-0">Transmission:</label></div>
-       <div class="col text-truncate">8-Speed Tiptronic</div>
-      </div>
-      <div class="form-row flex-nowrap mb-1">
-       <div class="col"><label class="d-block font-weight-bold mb-0">Mileage:</label></div>
-       <div class="col text-truncate">19,585</div>
-      </div>
+      <div class="border">here</div>
      </div>
     </div>
    </div>
 
-   <div class="card">
-    <div class="card-header">
-     <ul class="nav nav-tabs card-header-tabs" id="inventoryTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-       <a class="nav-link active" id="availCars-tab" data-toggle="tab" href="#availCars" role="tab" aria-controls="availCars" aria-selected="true">Available For Sale</a>
-      </li>
-      <li class="nav-item" role="presentation">
-       <a class="nav-link" id="pendingCars-tab" data-toggle="tab" href="#pendingCars" role="tab" aria-controls="pendingCars" aria-selected="false">Pending Deals</a>
-      </li>
-      <li class="nav-item" role="presentation">
-       <a class="nav-link" id="consignedCars-tab" data-toggle="tab" href="#consignedCars" role="tab" aria-controls="consignedCars" aria-selected="false">On Consignment</a>
-      </li>
-     </ul>
-    </div>
-    <div class="card-body">
-     <div class="tab-content" id="inventoryTabsContent">
-      <div class="tab-pane fade show active" id="availCars" role="tabpanel" aria-labelledby="availCars-tab">
-       <livewire:car.car-browse />
-      </div>
-      <div class="tab-pane fade" id="pendingCars" role="tabpanel" aria-labelledby="pendingCars-tab">
-       <code>Content currently unavailable</code>
-      </div>
-      <div class="tab-pane fade" id="consignedCars" role="tabpanel" aria-labelledby="consignedCars-tab">
-       <code>Content currently unavailable</code>
-      </div>
-     </div>
-    </div>
+   <div class="card card-body">
+    <livewire:car.car-browse />
    </div>
   </div>
  </div>
